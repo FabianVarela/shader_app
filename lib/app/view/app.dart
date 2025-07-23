@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shader_app/counter/counter.dart';
+import 'package:shader_app/features/main/view/main_page.dart';
 import 'package:shader_app/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -16,7 +16,7 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      home: const MainPage(),
     );
   }
 }
