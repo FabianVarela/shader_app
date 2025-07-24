@@ -15,9 +15,8 @@ out vec4 fragColor;
 const int NUM_STEPS = 32;
 const float PI      = 3.141592;
 const float EPSILON = 1e-3;
-
 #define EPSILON_NRM (0.1 / iResolution.x)
-#define AA
+//#define AA
 
 // sea
 const int ITER_GEOMETRY = 3;
@@ -27,7 +26,7 @@ const float SEA_CHOPPY = 4.0;
 const float SEA_SPEED = 0.8;
 const float SEA_FREQ = 0.16;
 const vec3 SEA_BASE = vec3(0.0, 0.09, 0.18);
-const vec3 SEA_WATER_COLOR = vec3(0.8, 0.9, 0.6) * 0.6;
+const vec3 SEA_WATER_COLOR = vec3(0.8, 0.9, 0.6)*0.6;
 #define SEA_TIME (1.0 + iTime * SEA_SPEED)
 const mat2 octave_m = mat2(1.6, 1.2, -1.2, 1.6);
 
@@ -192,13 +191,18 @@ vec3 getPixel(in vec2 coord, float time) {
     return mix(
     getSkyColor(dir),
     getSeaColor(p, n, light, dir, dist),
-    pow(smoothstep(0.0, -0.02, dir.y), 0.2));
+    pow(smoothstep(0.0, -0.02, dir.y), 0.2)
+    );
 }
 
 // main
 void main() {
+    // Invert the y position
+    vec2 uv = gl_FragCoord.xy;
+    uv.y = 1.0 - uv.y;
+
     float time = iTime * 0.3 + iMouse.x*0.01;
-    vec3 color = getPixel(gl_FragCoord.xy, time);
+    vec3 color = getPixel(uv, time);
 
     // post
     fragColor = vec4(pow(color, vec3(0.65)), 1.0);
