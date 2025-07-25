@@ -31,3 +31,4 @@ flutter:
   shaders:
     - shaders/seascape.frag
     - shaders/pyramid_fractal.frag
+    - shaders/water_ripple.frag
