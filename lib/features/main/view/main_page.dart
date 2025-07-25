@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shader_app/features/pyramid/view/pyramid_page.dart';
+import 'package:shader_app/features/water_ripple/view/water_ripple_page.dart';
 import 'package:shader_app/features/wave/view/wave_page.dart';
 
 class MainPage extends StatelessWidget {
@@ -19,6 +20,7 @@ class MainView extends StatelessWidget {
     final buttonList = <({String text, Widget page})>[
       (text: 'Wave Shader', page: const WavePage()),
       (text: 'Pyramid fractal Shader', page: const PyramidPage()),
+      (text: 'Watter ripple Shader', page: const WaterRipplePage()),
     ];
 
     return Scaffold(
