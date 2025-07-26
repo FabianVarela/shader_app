@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shader_app/features/pyramid/view/pyramid_page.dart';
 import 'package:shader_app/features/ripple_effect/view/ripple_effect_page.dart';
+import 'package:shader_app/features/ripple_touch/view/ripple_touch_page.dart';
 import 'package:shader_app/features/water_ripple/view/water_ripple_page.dart';
 import 'package:shader_app/features/wave/view/wave_page.dart';
 
@@ -23,6 +24,7 @@ class MainView extends StatelessWidget {
       (text: 'Pyramid fractal Shader', page: const PyramidPage()),
       (text: 'Watter ripple Shader', page: const WaterRipplePage()),
       (text: 'Ripple effect Shader', page: const RippleEffectPage()),
+      (text: 'Ripple touch Shader', page: const RippleTouchPage()),
     ];
 
     return Scaffold(
