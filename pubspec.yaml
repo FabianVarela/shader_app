@@ -36,3 +36,4 @@ flutter:
     - shaders/pyramid_fractal.frag
     - shaders/water_ripple.frag
     - shaders/ripple_effect.frag
+    - shaders/ripple_touch.frag
