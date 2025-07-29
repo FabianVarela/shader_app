@@ -5,6 +5,7 @@ import 'package:shader_app/features/ripple_effect/view/ripple_effect_page.dart';
 import 'package:shader_app/features/ripple_touch/view/ripple_touch_page.dart';
 import 'package:shader_app/features/water_ripple/view/water_ripple_page.dart';
 import 'package:shader_app/features/wave/view/wave_page.dart';
+import 'package:shader_app/features/wavy_stripes/view/wavy_stripes_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -27,6 +28,7 @@ class MainView extends StatelessWidget {
       (text: 'Ripple effect Shader', page: const RippleEffectPage()),
       (text: 'Ripple touch Shader', page: const RippleTouchPage()),
       (text: 'Gradient flow Shader', page: const GradientFlowPage()),
+      (text: 'Wavy stripes Shader', page: const WavyStripesPage()),
     ];
 
     return Scaffold(
