@@ -38,3 +38,4 @@ flutter:
     - shaders/ripple_effect.frag
     - shaders/ripple_touch.frag
     - shaders/gradient_flow.frag
+    - shaders/wavy_stripes.frag
