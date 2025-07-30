@@ -36,9 +36,7 @@ class _BurnEffectViewState extends State<BurnEffectView> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _loadShader();
-    });
+    _loadShader();
   }
 
   @override
