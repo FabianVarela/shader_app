@@ -197,9 +197,8 @@ vec3 getPixel(in vec2 coord, float time) {
 
 // main
 void main() {
-    // Invert the y position
-    vec2 uv = gl_FragCoord.xy;
-    uv.y = 1.0 - uv.y;
+    vec2 fragCoord = FlutterFragCoord();
+    vec2 uv = fragCoord.xy;
 
     float time = iTime * 0.3 + iMouse.x*0.01;
     vec3 color = getPixel(uv, time);

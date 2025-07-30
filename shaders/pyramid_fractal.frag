@@ -51,9 +51,9 @@ vec4 rm (vec3 ro, vec3 rd){
 }
 
 void main() {
-    vec2 pos = gl_FragCoord.xy;
+    vec2 fragCoord = FlutterFragCoord();
 
-    vec2 uv = (pos-(iResolution.xy/2.))/iResolution.x;
+    vec2 uv = (fragCoord-(iResolution.xy/2.))/iResolution.x;
     vec3 ro = vec3(0., 0., -50.);
     ro.xz = rotate(ro.xz, iTime);
     vec3 cf = normalize(-ro);

@@ -6,7 +6,8 @@ uniform vec2 iResolution;
 out vec4 fragColor;
 
 void main() {
-    vec2 uv = gl_FragCoord.xy/iResolution.xy;
+    vec2 fragCoord = FlutterFragCoord();
+    vec2 uv = fragCoord/iResolution.xy;
 
     float l=iTime;
     vec2 uv2, p=uv;
