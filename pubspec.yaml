@@ -39,3 +39,4 @@ flutter:
     - shaders/ripple_touch.frag
     - shaders/gradient_flow.frag
     - shaders/wavy_stripes.frag
+    - shaders/burn_effect.frag
