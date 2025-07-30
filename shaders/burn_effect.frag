@@ -5,9 +5,6 @@
 uniform vec2 iResolution;
 uniform float iTime;
 
-uniform float iFrame;
-uniform vec4 iMouse;
-
 uniform sampler2D sourceImage;
 uniform sampler2D targetImage;
 
