@@ -20,7 +20,7 @@ class RippleTouchView extends StatefulWidget {
 class _RippleTouchViewState extends State<RippleTouchView>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  var _pointer = Offset.zero;
+  Offset _pointer = Offset.zero;
 
   @override
   void initState() {
