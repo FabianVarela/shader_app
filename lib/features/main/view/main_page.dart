@@ -4,6 +4,7 @@ import 'package:shader_app/features/gradient_flow/view/gradient_flow_page.dart';
 import 'package:shader_app/features/pyramid/view/pyramid_page.dart';
 import 'package:shader_app/features/ripple_effect/view/ripple_effect_page.dart';
 import 'package:shader_app/features/ripple_touch/view/ripple_touch_page.dart';
+import 'package:shader_app/features/warp_counter/view/warp_counter_page.dart';
 import 'package:shader_app/features/water_ripple/view/water_ripple_page.dart';
 import 'package:shader_app/features/wave/view/wave_page.dart';
 import 'package:shader_app/features/wavy_stripes/view/wavy_stripes_page.dart';
@@ -31,6 +32,7 @@ class MainView extends StatelessWidget {
       (text: 'Gradient flow Shader', page: const GradientFlowPage()),
       (text: 'Wavy stripes Shader', page: const WavyStripesPage()),
       (text: 'Burn effect Shader', page: const BurnEffectPage()),
+      (text: 'Warp effect Shader', page: const WarpCounterPage()),
     ];
 
     return Scaffold(
