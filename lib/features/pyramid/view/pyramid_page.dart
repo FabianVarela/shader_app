@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_shaders/flutter_shaders.dart';
@@ -50,15 +49,10 @@ class _PyramidViewState extends State<PyramidView>
       body: ShaderBuilder(
         (_, shader, child) => AnimatedSampler(
           (_, size, canvas) {
-            final screenIncrement = switch (defaultTargetPlatform) {
-              TargetPlatform.android || TargetPlatform.iOS => 3,
-              _ => 1,
-            };
-
             shader
               ..setFloat(0, _time)
-              ..setFloat(1, size.width * screenIncrement)
-              ..setFloat(2, size.height * screenIncrement);
+              ..setFloat(1, size.width)
+              ..setFloat(2, size.height);
             canvas.drawPaint(Paint()..shader = shader);
           },
           child: child!,

@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shader_app/features/wavy_stripes/widgets/shader_painter.dart';
 
@@ -42,10 +41,6 @@ class _WavyStripesViewState extends State<WavyStripesView> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
-    final screenIncrement = switch (defaultTargetPlatform) {
-      TargetPlatform.android || TargetPlatform.iOS => 3,
-      _ => 1,
-    };
 
     return Scaffold(
       body: _shader == null
@@ -53,11 +48,7 @@ class _WavyStripesViewState extends State<WavyStripesView> {
           : SizedBox.fromSize(
               size: Size(size.width, size.height),
               child: CustomPaint(
-                painter: ShaderPainter(
-                  shader: _shader!,
-                  incrementSize: screenIncrement,
-                  time: _delta,
-                ),
+                painter: ShaderPainter(shader: _shader!, time: _delta),
               ),
             ),
     );

@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:shader_app/features/water_ripple/widgets/shader_painter.dart';
@@ -54,18 +53,13 @@ class _WaterRippleViewState extends State<WaterRippleView> {
           }
           if (snapshot.hasError) return const Offstage();
 
-          final screenIncrement = switch (defaultTargetPlatform) {
-            TargetPlatform.android || TargetPlatform.iOS => 3,
-            _ => 1,
-          };
-
           return CustomPaint(
             size: Size(size.width, size.height),
             painter: ShaderPainter(
               shader: snapshot.data!
                 ..setFloat(0, _delta)
-                ..setFloat(1, size.width * screenIncrement)
-                ..setFloat(2, size.height * screenIncrement),
+                ..setFloat(1, size.width)
+                ..setFloat(2, size.height),
             ),
           );
         },
