@@ -40,3 +40,4 @@ flutter:
     - shaders/gradient_flow.frag
     - shaders/wavy_stripes.frag
     - shaders/burn_effect.frag
+    - shaders/warp_effect.frag
