@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shader_app/features/burn_effect/view/burn_effect_page.dart';
 import 'package:shader_app/features/gradient_flow/view/gradient_flow_page.dart';
+import 'package:shader_app/features/plasma/view/plasma_page.dart';
 import 'package:shader_app/features/pyramid/view/pyramid_page.dart';
 import 'package:shader_app/features/ripple_effect/view/ripple_effect_page.dart';
 import 'package:shader_app/features/ripple_touch/view/ripple_touch_page.dart';
@@ -33,6 +34,7 @@ class MainView extends StatelessWidget {
       (text: 'Wavy stripes Shader', page: const WavyStripesPage()),
       (text: 'Burn effect Shader', page: const BurnEffectPage()),
       (text: 'Warp effect Shader', page: const WarpCounterPage()),
+      (text: 'Plasma effect Shader', page: const PlasmaPage()),
     ];
 
     return Scaffold(
