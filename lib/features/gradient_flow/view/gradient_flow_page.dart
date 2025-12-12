@@ -31,7 +31,7 @@ class _GradientFlowViewState extends State<GradientFlowView> {
   @override
   void initState() {
     super.initState();
-    _loadMyShader();
+    unawaited(_loadMyShader());
   }
 
   @override

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_shaders/flutter_shaders.dart';
@@ -31,7 +33,7 @@ class _PlasmaViewState extends State<PlasmaView>
       _time += 0.015;
       setState(() {});
     });
-    _ticker.start();
+    unawaited(_ticker.start());
   }
 
   @override

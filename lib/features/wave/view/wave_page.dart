@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _loadShader('seascape.frag');
+    unawaited(_loadShader('seascape.frag'));
   }
 
   @override

@@ -1,6 +1,6 @@
 import 'package:shader_app/app/app.dart';
 import 'package:shader_app/bootstrap.dart';
 
-void main() {
-  bootstrap(() => const App());
+Future<void> main() async {
+  await bootstrap(() => const App());
 }

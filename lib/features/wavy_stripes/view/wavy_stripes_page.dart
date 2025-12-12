@@ -29,7 +29,7 @@ class _WavyStripesViewState extends State<WavyStripesView> {
   @override
   void initState() {
     super.initState();
-    _loadShader();
+    unawaited(_loadShader());
   }
 
   @override

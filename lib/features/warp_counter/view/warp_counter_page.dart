@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_shaders/flutter_shaders.dart';
@@ -32,7 +34,7 @@ class _WarpCounterViewState extends State<WarpCounterView>
     _ticker = createTicker((elapsed) {
       setState(() => _elapsed = elapsed);
     });
-    _ticker.start();
+    unawaited(_ticker.start());
   }
 
   @override

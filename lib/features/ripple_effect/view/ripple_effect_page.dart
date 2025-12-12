@@ -33,7 +33,7 @@ class _RippleEffectViewState extends State<RippleEffectView> {
   @override
   void initState() {
     super.initState();
-    _loadMyShader();
+    unawaited(_loadMyShader());
   }
 
   @override

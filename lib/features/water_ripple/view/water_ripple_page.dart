@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -31,7 +32,8 @@ class _WaterRippleViewState extends State<WaterRippleView> {
     _delta = 0;
     _ticker = Ticker((elapsedTime) {
       setState(() => _delta += 1 / 60);
-    })..start();
+    });
+    unawaited(_ticker.start());
   }
 
   @override

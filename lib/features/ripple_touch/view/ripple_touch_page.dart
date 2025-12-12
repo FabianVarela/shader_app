@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_shaders/flutter_shaders.dart';
 
@@ -90,9 +92,8 @@ class _RippleTouchViewState extends State<RippleTouchView>
   }
 
   void _updatePointer(PointerEvent details) {
-    _controller
-      ..reset()
-      ..forward();
+    _controller.reset();
+    unawaited(_controller.forward());
 
     setState(() => _pointer = details.localPosition);
   }

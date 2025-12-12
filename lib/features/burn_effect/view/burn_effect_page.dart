@@ -36,7 +36,7 @@ class _BurnEffectViewState extends State<BurnEffectView> {
   @override
   void initState() {
     super.initState();
-    _loadShader();
+    unawaited(_loadShader());
   }
 
   @override

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:shader_app/features/burn_effect/view/burn_effect_page.dart';
 import 'package:shader_app/features/gradient_flow/view/gradient_flow_page.dart';
@@ -57,6 +59,8 @@ class MainView extends StatelessWidget {
   }
 
   void _goToPage(BuildContext context, Widget page) {
-    Navigator.push(context, MaterialPageRoute<void>(builder: (_) => page));
+    unawaited(
+      Navigator.push(context, MaterialPageRoute<void>(builder: (_) => page)),
+    );
   }
 }
