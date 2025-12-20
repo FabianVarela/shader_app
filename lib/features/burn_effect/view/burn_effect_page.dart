@@ -55,9 +55,9 @@ class _BurnEffectViewState extends State<BurnEffectView> {
                 spacing: 8,
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.all(16),
+                    padding: const .all(16),
                     child: ClipRRect(
-                      borderRadius: BorderRadius.circular(32),
+                      borderRadius: .circular(32),
                       child: AspectRatio(
                         aspectRatio: _image!.width / _image!.height,
                         child: CustomPaint(
@@ -73,8 +73,8 @@ class _BurnEffectViewState extends State<BurnEffectView> {
                     child: AnimatedSwitcher(
                       duration: Durations.medium4,
                       child: _isCompleted && !_isRestored
-                          ? Text('Restore', key: UniqueKey())
-                          : Text('Burn it!!!', key: UniqueKey()),
+                          ? const Text('Restore', key: ValueKey('restore'))
+                          : const Text('Burn it!!!', key: ValueKey('burn')),
                     ),
                   ),
                 ],

@@ -45,7 +45,7 @@ class MainView extends StatelessWidget {
         width: MediaQuery.sizeOf(context).width,
         child: Column(
           spacing: 10,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: .center,
           children: <Widget>[
             for (final item in buttonList)
               ElevatedButton(

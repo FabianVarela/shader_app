@@ -22,7 +22,7 @@ class RippleTouchView extends StatefulWidget {
 class _RippleTouchViewState extends State<RippleTouchView>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  Offset _pointer = Offset.zero;
+  Offset _pointer = .zero;
 
   @override
   void initState() {
@@ -45,7 +45,7 @@ class _RippleTouchViewState extends State<RippleTouchView>
       backgroundColor: Colors.white,
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: const .all(24),
           child: Listener(
             onPointerMove: _updatePointer,
             onPointerDown: _updatePointer,
@@ -75,12 +75,12 @@ class _RippleTouchViewState extends State<RippleTouchView>
                 child: child,
               ),
               child: Padding(
-                padding: const EdgeInsets.all(8),
+                padding: const .all(8),
                 child: AspectRatio(
                   aspectRatio: .7,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
-                    child: Image.asset('assets/dash.jpg', fit: BoxFit.cover),
+                    borderRadius: .circular(8),
+                    child: Image.asset('assets/dash.jpg', fit: .cover),
                   ),
                 ),
               ),

@@ -56,13 +56,10 @@ class _WarpCounterViewState extends State<WarpCounterView>
                 ..setFloat(2, _elapsed.inMilliseconds.toDouble() / 1000);
               return shader;
             },
-            blendMode: BlendMode.srcIn,
+            blendMode: .srcIn,
             child: Text(
               '$_counter',
-              style: const TextStyle(
-                fontWeight: FontWeight.w900,
-                fontSize: 200,
-              ),
+              style: const TextStyle(fontWeight: .w900, fontSize: 200),
             ),
           ),
         ),
@@ -70,8 +67,8 @@ class _WarpCounterViewState extends State<WarpCounterView>
       ),
       floatingActionButton: Column(
         spacing: 8,
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: .end,
+        crossAxisAlignment: .end,
         children: <Widget>[
           FloatingActionButton(
             heroTag: 'Increment',

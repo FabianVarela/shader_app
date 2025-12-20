@@ -49,7 +49,7 @@ class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
     return Scaffold(
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: .center,
           children: <Widget>[
             SizedBox.fromSize(
               size: Size(size.width, size.height),
