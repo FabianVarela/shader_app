@@ -43,3 +43,4 @@ flutter:
     - shaders/burn_effect.frag
     - shaders/warp_effect.frag
     - shaders/plasma_effect.frag
+    - shaders/sun_vortex.frag
