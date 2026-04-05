@@ -7,6 +7,7 @@ import 'package:shader_app/features/plasma/view/plasma_page.dart';
 import 'package:shader_app/features/pyramid/view/pyramid_page.dart';
 import 'package:shader_app/features/ripple_effect/view/ripple_effect_page.dart';
 import 'package:shader_app/features/ripple_touch/view/ripple_touch_page.dart';
+import 'package:shader_app/features/sun_vortex/view/sun_vortex_page.dart';
 import 'package:shader_app/features/warp_counter/view/warp_counter_page.dart';
 import 'package:shader_app/features/water_ripple/view/water_ripple_page.dart';
 import 'package:shader_app/features/wave/view/wave_page.dart';
@@ -37,6 +38,7 @@ class MainView extends StatelessWidget {
       (text: 'Burn effect Shader', page: const BurnEffectPage()),
       (text: 'Warp effect Shader', page: const WarpCounterPage()),
       (text: 'Plasma effect Shader', page: const PlasmaPage()),
+      (text: 'Sun vortex Shader', page: const SunVortexPage()),
     ];
 
     return Scaffold(
