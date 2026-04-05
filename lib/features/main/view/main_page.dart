@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:shader_app/features/burn_effect/view/burn_effect_page.dart';
+import 'package:shader_app/features/dive_cloud/view/dive_cloud_page.dart';
 import 'package:shader_app/features/gradient_flow/view/gradient_flow_page.dart';
 import 'package:shader_app/features/plasma/view/plasma_page.dart';
 import 'package:shader_app/features/pyramid/view/pyramid_page.dart';
@@ -39,6 +40,7 @@ class MainView extends StatelessWidget {
       (text: 'Warp effect Shader', page: const WarpCounterPage()),
       (text: 'Plasma effect Shader', page: const PlasmaPage()),
       (text: 'Sun vortex Shader', page: const SunVortexPage()),
+      (text: 'Dive cloud Shader', page: const DiveCloudPage()),
     ];
 
     return Scaffold(
