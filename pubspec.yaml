@@ -44,3 +44,4 @@ flutter:
     - shaders/warp_effect.frag
     - shaders/plasma_effect.frag
     - shaders/sun_vortex.frag
+    - shaders/dive_cloud.frag
