@@ -9,7 +9,7 @@ out vec4 fragColor;
 
 void main() {
     vec2 fragCoord = FlutterFragCoord();
-    vec2 center = fragCoord/iResolution.xy - vec2(0.5, 0.5);
+    vec2 center = fragCoord / iResolution.xy - vec2(0.5, 0.5);
 
     float dist = length(center);
     float p = (atan(center.y, center.x)) / (2.0 * PI);

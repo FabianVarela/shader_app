@@ -16,7 +16,7 @@ void main() {
     vec2 r = iResolution.xy;
     float padding = 1.5;
 
-    vec2 p = ((I+I-r) / r.y) * padding;
+    vec2 p = ((I + I - r) / r.y) * padding;
     vec2 z = vec2(0.0);
 
     z += 4.0 - 4.0 * abs(0.7 - dot(p, p));
