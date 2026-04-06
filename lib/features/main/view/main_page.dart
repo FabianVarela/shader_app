@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:shader_app/features/burn_effect/view/burn_effect_page.dart';
+import 'package:shader_app/features/butterfly_forest/view/butterfly_forest_page.dart';
 import 'package:shader_app/features/dive_cloud/view/dive_cloud_page.dart';
 import 'package:shader_app/features/gradient_flow/view/gradient_flow_page.dart';
 import 'package:shader_app/features/plasma/view/plasma_page.dart';
@@ -41,22 +42,26 @@ class MainView extends StatelessWidget {
       (text: 'Plasma effect Shader', page: const PlasmaPage()),
       (text: 'Sun vortex Shader', page: const SunVortexPage()),
       (text: 'Dive cloud Shader', page: const DiveCloudPage()),
+      (text: 'Butterfly forest Shader', page: const ButterflyForestPage()),
     ];
 
     return Scaffold(
       appBar: AppBar(title: const Text('Shaders example')),
       body: SizedBox(
         width: MediaQuery.sizeOf(context).width,
-        child: Column(
-          spacing: 10,
-          mainAxisAlignment: .center,
-          children: <Widget>[
-            for (final item in buttonList)
-              ElevatedButton(
-                onPressed: () => _goToPage(context, item.page),
-                child: Text(item.text),
-              ),
-          ],
+        child: SingleChildScrollView(
+          padding: const .symmetric(vertical: 24),
+          child: Column(
+            spacing: 10,
+            mainAxisAlignment: .center,
+            children: <Widget>[
+              for (final item in buttonList)
+                ElevatedButton(
+                  onPressed: () => _goToPage(context, item.page),
+                  child: Text(item.text),
+                ),
+            ],
+          ),
         ),
       ),
     );
