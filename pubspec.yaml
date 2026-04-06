@@ -47,3 +47,5 @@ flutter:
     - shaders/dive_cloud.frag
     - shaders/butterfly_flock.frag
     - shaders/cyberspace_warehouse.frag
+    - shaders/hail_mary_nebulosa.frag
+    - shaders/hail_mary_particles.frag
