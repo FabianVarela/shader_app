@@ -6,6 +6,7 @@ import 'package:shader_app/features/butterfly_forest/view/butterfly_forest_page.
 import 'package:shader_app/features/cyber_space_warehouse/view/cyber_space_warehouse_page.dart';
 import 'package:shader_app/features/dive_cloud/view/dive_cloud_page.dart';
 import 'package:shader_app/features/gradient_flow/view/gradient_flow_page.dart';
+import 'package:shader_app/features/hail_mary_particles/view/hail_mary_particles_page.dart';
 import 'package:shader_app/features/plasma/view/plasma_page.dart';
 import 'package:shader_app/features/pyramid/view/pyramid_page.dart';
 import 'package:shader_app/features/ripple_effect/view/ripple_effect_page.dart';
@@ -48,6 +49,7 @@ class MainView extends StatelessWidget {
         text: 'Cyberspace warehouse Shader',
         page: const CyberSpaceWarehousePage(),
       ),
+      (text: 'Hail Mary particles', page: const HailMaryParticlesPage()),
     ];
 
     return Scaffold(
