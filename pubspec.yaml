@@ -46,3 +46,4 @@ flutter:
     - shaders/sun_vortex.frag
     - shaders/dive_cloud.frag
     - shaders/butterfly_flock.frag
+    - shaders/cyberspace_warehouse.frag
