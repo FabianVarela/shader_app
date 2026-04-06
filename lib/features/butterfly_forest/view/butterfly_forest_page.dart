@@ -14,27 +14,14 @@ class ButterflyForestPage extends StatelessWidget {
   }
 }
 
-class ButterflyForestView extends StatefulWidget {
+class ButterflyForestView extends StatelessWidget {
   const ButterflyForestView({super.key});
-
-  @override
-  State<ButterflyForestView> createState() => _ButterflyForestViewState();
-}
-
-class _ButterflyForestViewState extends State<ButterflyForestView> {
-  late final Future<_ButterflyAssets> _assetsFuture;
-
-  @override
-  void initState() {
-    super.initState();
-    _assetsFuture = _loadAll();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: FutureBuilder<_ButterflyAssets>(
-        future: _assetsFuture,
+        future: _loadAll(),
         builder: (_, snap) {
           if (snap.hasError) {
             return Center(
