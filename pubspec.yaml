@@ -45,3 +45,4 @@ flutter:
     - shaders/plasma_effect.frag
     - shaders/sun_vortex.frag
     - shaders/dive_cloud.frag
+    - shaders/butterfly_flock.frag
