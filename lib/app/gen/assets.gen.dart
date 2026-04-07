@@ -83,6 +83,9 @@ class $AssetsThumbnailsGen {
   /// File path: assets/thumbnails/warp_effect.png
   String get warpEffect => 'assets/thumbnails/warp_effect.png';
 
+  /// File path: assets/thumbnails/water_ripple.png
+  String get waterRipple => 'assets/thumbnails/water_ripple.png';
+
   /// File path: assets/thumbnails/wavy_stripes.png
   String get wavyStripes => 'assets/thumbnails/wavy_stripes.png';
 
@@ -105,6 +108,7 @@ class $AssetsThumbnailsGen {
     seascape,
     sunVortex,
     warpEffect,
+    waterRipple,
     wavyStripes,
   ];
 }
