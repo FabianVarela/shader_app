@@ -42,6 +42,7 @@ class _SunVortexViewState extends State<SunVortexView> {
     final size = MediaQuery.sizeOf(context);
 
     return Scaffold(
+      backgroundColor: Colors.black,
       body: _shader == null
           ? const Center(child: CircularProgressIndicator())
           : SizedBox.fromSize(
@@ -55,7 +56,7 @@ class _SunVortexViewState extends State<SunVortexView> {
 
   Future<void> _loadMyShader() async {
     final program = await FragmentProgram.fromAsset(
-      'shaders/sun_vortex.frag',
+      'shaders/cronos_effect.frag',
     );
 
     _shader = program.fragmentShader();
