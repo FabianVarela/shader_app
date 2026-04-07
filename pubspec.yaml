@@ -20,17 +20,27 @@ dependencies:
 
 dev_dependencies:
   bloc_test: ^10.0.0
+  build_runner: ^2.11.1
+  flutter_gen_runner: ^5.13.0+1
   flutter_test:
     sdk: flutter
   mocktail: ^1.0.4
   very_good_analysis: ^10.2.0
 
+flutter_gen:
+  output: lib/app/gen/
+  line_length: 80
+
+  integrations:
+    image: false
+
 flutter:
-  generate: true
   uses-material-design: true
+  generate: true
 
   assets:
-    - assets/
+    - assets/resources/
+    - assets/thumbnails/
 
   shaders:
     - shaders/seascape.frag
