@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shader_app/features/main/view/main_page.dart';
+import 'package:shader_app/app/router/app_router.dart';
 import 'package:shader_app/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -7,7 +7,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       theme: ThemeData(
         appBarTheme: AppBarTheme(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -16,7 +17,6 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const MainPage(),
     );
   }
 }
