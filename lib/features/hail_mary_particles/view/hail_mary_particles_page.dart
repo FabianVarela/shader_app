@@ -112,7 +112,7 @@ class _HailMaryParticlesViewState extends State<HailMaryParticlesView>
         true => FloatingActionButton(
           onPressed: _startTransition,
           child: _showParticles
-              ? const Icon(Icons.cloud)
+              ? const Icon(Icons.public)
               : const Icon(Icons.snowing),
         ),
         false => const SizedBox.shrink(),

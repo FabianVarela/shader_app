@@ -3,6 +3,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shader_app/app/gen/assets.gen.dart';
 import 'package:shader_app/features/burn_effect/widgets/shader_painter.dart';
 
 class BurnEffectPage extends StatelessWidget {
@@ -108,7 +109,7 @@ class _BurnEffectViewState extends State<BurnEffectView> {
   Future<ui.Image> _decodeImage() async {
     final bundleImage = await DefaultAssetBundle.of(
       context,
-    ).load('assets/dash_vertical.jpg');
+    ).load(Assets.resources.dashVertical);
 
     final bytes = bundleImage.buffer.asUint8List();
     final codec = await ui.instantiateImageCodec(Uint8List.fromList(bytes));

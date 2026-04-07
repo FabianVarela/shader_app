@@ -56,7 +56,7 @@ class _SunVortexViewState extends State<SunVortexView> {
 
   Future<void> _loadMyShader() async {
     final program = await FragmentProgram.fromAsset(
-      'shaders/cronos_effect.frag',
+      'shaders/sun_vortex.frag',
     );
 
     _shader = program.fragmentShader();

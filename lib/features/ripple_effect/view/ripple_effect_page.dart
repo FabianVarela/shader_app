@@ -4,6 +4,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shader_app/app/gen/assets.gen.dart';
 import 'package:shader_app/features/ripple_effect/widgets/shader_painter.dart';
 
 class RippleEffectPage extends StatelessWidget {
@@ -60,7 +61,7 @@ class _RippleEffectViewState extends State<RippleEffectView> {
   }
 
   Future<void> _loadMyShader() async {
-    final imageData = await rootBundle.load('assets/dash.jpg');
+    final imageData = await rootBundle.load(Assets.resources.dash);
     _image = await decodeImageFromList(imageData.buffer.asUint8List());
 
     final program = await FragmentProgram.fromAsset(

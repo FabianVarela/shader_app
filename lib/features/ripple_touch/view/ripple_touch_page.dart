@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_shaders/flutter_shaders.dart';
+import 'package:shader_app/app/gen/assets.gen.dart';
 
 class RippleTouchPage extends StatelessWidget {
   const RippleTouchPage({super.key});
@@ -80,7 +81,7 @@ class _RippleTouchViewState extends State<RippleTouchView>
                   aspectRatio: .7,
                   child: ClipRRect(
                     borderRadius: .circular(8),
-                    child: Image.asset('assets/dash.jpg', fit: .cover),
+                    child: Image.asset(Assets.resources.dash, fit: .cover),
                   ),
                 ),
               ),

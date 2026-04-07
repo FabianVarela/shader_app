@@ -3,6 +3,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shader_app/app/gen/assets.gen.dart';
 import 'package:shader_app/features/butterfly_forest/widget/butterfly_shader_widget.dart';
 
 class ButterflyForestPage extends StatelessWidget {
@@ -49,8 +50,8 @@ class ButterflyForestView extends StatelessWidget {
   Future<_ButterflyAssets> _loadAll() async {
     final results = await Future.wait([
       ui.FragmentProgram.fromAsset('shaders/butterfly_flock.frag'),
-      _loadImage('assets/noise_rgba.png'),
-      _loadImage('assets/forest_slope_4k.jpg'),
+      _loadImage(Assets.resources.noiseRgba),
+      _loadImage(Assets.resources.forestSlope4k),
     ]);
 
     return _ButterflyAssets(
