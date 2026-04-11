@@ -4,8 +4,9 @@
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
 
-Flutter application showcasing various shader effects using Flutter's native shader support. Built with BLoC pattern and
-supporting multiple environments.
+Flutter application showcasing various shader effects using Flutter's native shader support. Features a responsive
+design that adapts to mobile, tablet, and desktop with an interactive shader gallery. Built with BLoC pattern, go_router
+navigation, and supporting multiple environments.
 
 ## Prerequisites
 
@@ -34,19 +35,6 @@ cd shader_app
 ```bash
 flutter pub get
 ```
-
-### 3. Generate localization files
-
-The project supports multiple languages (English and Spanish). Generate the localization files:
-
-```bash
-flutter gen-l10n --arb-dir="lib/l10n/arb"
-```
-
-Translation files are located at:
-
-- `lib/l10n/arb/app_en.arb` (English)
-- `lib/l10n/arb/app_es.arb` (Spanish)
 
 ## Development
 
@@ -113,150 +101,82 @@ flutter build windows --target lib/main_production.dart
 
 ```
 lib/
-├── l10n/              # Localization files
-│   ├── arb/          # .arb files for translations
-│   └── gen/          # Generated localization files
-├── app/              # App initialization and main widget
-│   └── view/         # App view
-├── features/         # Feature modules
-│   ├── main/         # Main screen with shader list
-│   ├── burn_effect/  # Burn effect shader
-│   ├── gradient_flow/# Gradient flow shader
-│   ├── plasma/       # Plasma effect shader
-│   ├── pyramid/      # Pyramid fractal shader
-│   ├── ripple_effect/# Ripple effect shader
-│   ├── ripple_touch/ # Touch ripple shader
-│   ├── warp_counter/ # Warp effect shader
-│   ├── water_ripple/ # Water ripple shader
-│   ├── wave/         # Seascape shader
-│   └── wavy_stripes/ # Wavy stripes shader
-shaders/              # GLSL shader files
-├── burn_effect.frag
-├── gradient_flow.frag
-├── plasma_effect.frag
-├── pyramid_fractal.frag
-├── ripple_effect.frag
-├── ripple_touch.frag
-├── seascape.frag
-├── warp_effect.frag
-├── water_ripple.frag
-└── wavy_stripes.frag
+├── l10n/                    # Localization files
+│   ├── arb/                # .arb files for translations
+│   └── gen/                # Generated localization files
+├── app/                    # App initialization and configuration
+│   ├── gen/                # Generated assets
+│   ├── models/             # App-wide models
+│   │   ├── shader_model.dart  # Shader data model
+│   │   └── shader_list.dart   # Shader gallery data
+│   ├── router/             # Navigation configuration
+│   │   └── app_router.dart    # go_router setup
+│   └── view/               # App widget
+├── features/               # Feature modules
+│   ├── main/               # Responsive shader gallery
+│   ├── burn_effect/        # Burn effect shader
+│   ├── butterfly_forest/   # Butterfly flock animation
+│   ├── cyber_space_warehouse/ # Cyberspace grid shader
+│   ├── dive_cloud/         # Cloud diving shader
+│   ├── gradient_flow/      # Gradient flow shader
+│   ├── hail_mary_particles/# Particle system shader
+│   ├── orb_effect/         # Orb prismatic effect
+│   ├── plasma/             # Plasma effect shader
+│   ├── pyramid/            # Pyramid fractal shader
+│   ├── ripple_effect/      # Ripple effect shader
+│   ├── ripple_touch/       # Touch ripple shader
+│   ├── sun_vortex/         # Sun vortex ray-marching
+│   ├── warp_counter/       # Warp effect shader
+│   ├── water_ripple/       # Water ripple shader
+│   ├── wave/               # Seascape shader
+│   └── wavy_stripes/       # Wavy stripes shader
+├── shaders/                # GLSL shader files
+│   ├── burn_effect.frag
+│   ├── gradient_flow.frag
+│   ├── orb_effect.frag
+│   ├── plasma_effect.frag
+│   ├── pyramid_fractal.frag
+│   ├── ripple_effect.frag
+│   ├── ripple_touch.frag
+│   ├── seascape.frag
+│   ├── warp_effect.frag
+│   ├── water_ripple.frag
+│   └── wavy_stripes.frag
+└── assets/                 # Static assets
+    └── thumbnails/         # Shader preview thumbnails
 ```
 
-## Localization (l10n)
+## Features
 
-### Add new translations
+### Responsive Design
 
-1. Edit the `.arb` files in `lib/l10n/arb/`:
-    - `app_en.arb` for English
-    - `app_es.arb` for Spanish
+The shader gallery adapts to different screen sizes:
 
-2. Add new key/value pairs:
-   ```json
-   {
-     "@@locale": "en",
-     "newKey": "New translation",
-     "@newKey": {
-       "description": "Description of the new key"
-     }
-   }
-   ```
+- **Mobile (<600px)**: Vertical list view with full-width cards
+- **Tablet (600-899px)**: 2-column grid layout
+- **Desktop Small (900-1199px)**: 3-column grid layout
+- **Desktop (≥1200px)**: 4-column grid layout
 
-3. Regenerate localization files:
-   ```bash
-   flutter gen-l10n --arb-dir="lib/l10n/arb"
-   ```
-
-4. Use the new string in your code:
-   ```dart
-   import 'package:shader_app/l10n/l10n.dart';
-
-   @override
-   Widget build(BuildContext context) {
-     final l10n = context.l10n;
-     return Text(l10n.newKey);
-   }
-   ```
-
-### Add new language
-
-1. Create a new `.arb` file in `lib/l10n/arb/`:
-   ```
-   app_fr.arb  # For French
-   ```
-
-2. Update iOS localization in `ios/Runner/Info.plist`:
-   ```xml
-   <key>CFBundleLocalizations</key>
-   <array>
-     <string>en</string>
-     <string>es</string>
-     <string>fr</string>
-   </array>
-   ```
-
-3. Regenerate localization files
-
-## Testing
-
-### Run all tests
-
-```bash
-flutter test
-```
-
-### Run tests with coverage
-
-```bash
-very_good test --coverage --test-randomize-ordering-seed random
-```
-
-### View coverage report
-
-```bash
-# Generate coverage report
-genhtml coverage/lcov.info -o coverage/
-
-# Open coverage report in browser
-open coverage/index.html
-```
-
-### Run specific test file
-
-```bash
-flutter test test/path/to/test_file.dart
-```
-
-## Code Quality
-
-### Run code analysis
-
-The project uses `very_good_analysis` to maintain code quality:
-
-```bash
-flutter analyze
-```
-
-### Format code
-
-```bash
-flutter format .
-```
-
-## Shaders
+### Shaders
 
 This project showcases the following shader effects:
 
-1. **Seascape**: Realistic ocean wave simulation
-2. **Pyramid Fractal**: Geometric fractal pattern
-3. **Water Ripple**: Simple water ripple effect
-4. **Ripple Effect**: Circular ripple animation
-5. **Ripple Touch**: Interactive touch ripples
-6. **Gradient Flow**: Flowing gradient colors
-7. **Wavy Stripes**: Animated wavy stripe pattern
-8. **Burn Effect**: Fire/burn animation effect
-9. **Warp Effect**: Space warp distortion
-10. **Plasma Effect**: Plasma energy effect
+1. **Seascape** (PROCEDURAL / NOISE): Realistic ocean wave simulation
+2. **Pyramid Fractal** (FRACTAL / CINE SHADER): Geometric fractal pattern
+3. **Water Ripple** (SIMULATION / WATER): Simple water ripple effect
+4. **Ripple Effect** (SIMULATION / IMAGE): Circular ripple animation
+5. **Ripple Touch** (INTERACTIVE / NEW): Interactive touch ripples
+6. **Gradient Flow** (FEATURED / NEW): Flowing gradient colors
+7. **Wavy Stripes** (SINE / POLAR ANGLE): Animated wavy stripe pattern
+8. **Burn Effect** (EFFECTS / POPULAR): Fire/burn animation effect
+9. **Warp Effect** (DISTORTION / POPULAR): Space warp distortion
+10. **Plasma Effect** (PLASMA / GOLF): Plasma energy effect
+11. **Sun Vortex** (RAY-MARCHING / ABSTRACT): Abstract sun vortex animation
+12. **Dive Cloud** (CLOUD / CINE SHADER): Cloud diving experience
+13. **Butterfly Flock** (BUTTERFLIES / FLOC): Butterfly flock simulation
+14. **Cyberspace Warehouse** (GRID / HEXAGONAL): Hexagonal grid space
+15. **Orb Effect** (PARTICLES / PRISMA): Prismatic orb particle effect
+16. **Hail Mary** (PARTICLES / TRENDING): Trending particle system
 
 All shader files are located in the `shaders/` directory and are written in GLSL (OpenGL Shading Language).
 
@@ -264,6 +184,7 @@ All shader files are located in the `shaders/` directory and are written in GLSL
 
 - **flutter_bloc**: State management using BLoC pattern
 - **bloc**: Core BLoC library
+- **go_router**: Declarative routing and navigation
 - **flutter_shaders**: Flutter shader support
 - **flutter_localizations**: Internationalization support
 - **intl**: Internationalization and localization utilities
@@ -274,60 +195,6 @@ All shader files are located in the `shaders/` directory and are written in GLSL
 - **bloc_test**: Testing utilities for BLoC
 - **mocktail**: Mocking library for tests
 - **very_good_analysis**: Strict lint rules
-
-## Troubleshooting
-
-### Error: "Flutter SDK not found"
-
-Verify that Flutter is installed correctly and in your PATH:
-
-```bash
-flutter doctor
-```
-
-### Shader compilation errors
-
-Make sure your device/platform supports shaders. Run:
-
-```bash
-flutter doctor -v
-```
-
-### l10n generation error
-
-Regenerate localization files:
-
-```bash
-flutter gen-l10n --arb-dir="lib/l10n/arb"
-```
-
-### Flavor not found error
-
-Make sure you're specifying both the flavor and target:
-
-```bash
-flutter run --flavor development --target lib/main_development.dart
-```
-
-### iOS build fails
-
-Clean and rebuild:
-
-```bash
-flutter clean
-cd ios
-pod install
-cd ..
-flutter build ios --flavor development --target lib/main_development.dart
-```
-
-### Tests failing
-
-Run tests with verbose output:
-
-```bash
-flutter test --reporter=expanded
-```
 
 ## Contributing
 
@@ -347,10 +214,17 @@ This project is licensed under the MIT License - see the [LICENSE](https://opens
 Generated by the [Very Good CLI][very_good_cli_link] 🤖
 
 [coverage_badge]: coverage_badge.svg
+
 [flutter_localizations_link]: https://api.flutter.dev/flutter/flutter_localizations/flutter_localizations-library.html
+
 [internationalization_link]: https://flutter.dev/docs/development/accessibility-and-localization/internationalization
+
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
+
 [license_link]: https://opensource.org/licenses/MIT
+
 [very_good_analysis_badge]: https://img.shields.io/badge/style-very_good_analysis-B22C89.svg
+
 [very_good_analysis_link]: https://pub.dev/packages/very_good_analysis
+
 [very_good_cli_link]: https://github.com/VeryGoodOpenSource/very_good_cli
