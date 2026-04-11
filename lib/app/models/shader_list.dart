@@ -115,6 +115,14 @@ final shaderList = <ShaderModel>[
     path: '/cyberspace-warehouse',
   ),
   ShaderModel(
+    id: 'orb-effect',
+    title: 'Orb Effect',
+    category: 'PARTICLES / PRISMA',
+    author: 'Me',
+    thumbnail: Assets.thumbnails.orbEffect,
+    path: '/orb-effect',
+  ),
+  ShaderModel(
     id: 'hail-mary',
     title: 'Hail Mary',
     category: 'PARTICLES / TRENDING',

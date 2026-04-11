@@ -6,6 +6,7 @@ import 'package:shader_app/features/dive_cloud/view/dive_cloud_page.dart';
 import 'package:shader_app/features/gradient_flow/view/gradient_flow_page.dart';
 import 'package:shader_app/features/hail_mary_particles/view/hail_mary_particles_page.dart';
 import 'package:shader_app/features/main/view/main_page.dart';
+import 'package:shader_app/features/orb_effect/view/orb_effect_page.dart';
 import 'package:shader_app/features/plasma/view/plasma_page.dart';
 import 'package:shader_app/features/pyramid/view/pyramid_page.dart';
 import 'package:shader_app/features/ripple_effect/view/ripple_effect_page.dart';
@@ -78,6 +79,10 @@ final appRouter = GoRouter(
         GoRoute(
           path: 'cyberspace-warehouse',
           builder: (_, _) => const CyberSpaceWarehousePage(),
+        ),
+        GoRoute(
+          path: 'orb-effect',
+          builder: (_, _) => const OrbEffectPage(),
         ),
         GoRoute(
           path: 'hail-mary',
