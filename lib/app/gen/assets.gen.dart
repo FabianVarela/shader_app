@@ -62,6 +62,9 @@ class $AssetsThumbnailsGen {
   /// File path: assets/thumbnails/mega_effect.png
   String get megaEffect => 'assets/thumbnails/mega_effect.png';
 
+  /// File path: assets/thumbnails/orb_effect.png
+  String get orbEffect => 'assets/thumbnails/orb_effect.png';
+
   /// File path: assets/thumbnails/plasma_effect.png
   String get plasmaEffect => 'assets/thumbnails/plasma_effect.png';
 
@@ -101,6 +104,7 @@ class $AssetsThumbnailsGen {
     hailMary,
     lavaLamp,
     megaEffect,
+    orbEffect,
     plasmaEffect,
     pyramidFractal,
     rippleEffect,

@@ -64,3 +64,4 @@ flutter:
     - shaders/lava_lamp.frag
     - shaders/art_coding.frag
     - shaders/cronos_effect.frag
+    - shaders/orb_effect.frag
