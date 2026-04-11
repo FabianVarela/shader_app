@@ -12,6 +12,17 @@ class MainPage extends StatelessWidget {
   }
 }
 
+enum _Breakpoints {
+  tablet(600),
+  desktopSmall(900),
+  desktop(1200)
+  ;
+
+  const _Breakpoints(this.size);
+
+  final int size;
+}
+
 class MainView extends StatelessWidget {
   const MainView({super.key});
 
@@ -31,14 +42,41 @@ class MainView extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontWeight: .bold),
         ),
       ),
-      body: ListView.separated(
-        padding: const .all(16),
-        itemCount: shaderList.length,
-        separatorBuilder: (_, _) => const SizedBox(height: 16),
-        itemBuilder: (_, index) => _ShaderCard(
-          shader: shaderList[index],
-          onTap: () => context.push(shaderList[index].path),
-        ),
+      body: LayoutBuilder(
+        builder: (_, constraints) {
+          final width = constraints.maxWidth;
+
+          if (width < _Breakpoints.tablet.size) {
+            return ListView.separated(
+              padding: const .all(16),
+              itemCount: shaderList.length,
+              separatorBuilder: (_, _) => const SizedBox(height: 16),
+              itemBuilder: (_, index) => _ShaderCard(
+                shader: shaderList[index],
+                onTap: () => context.push(shaderList[index].path),
+              ),
+            );
+          }
+
+          return GridView.builder(
+            padding: const .all(24),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: width >= _Breakpoints.desktop.size
+                  ? 4
+                  : width >= _Breakpoints.desktopSmall.size
+                  ? 3
+                  : 2,
+              crossAxisSpacing: 16,
+              mainAxisSpacing: 16,
+              childAspectRatio: .75,
+            ),
+            itemCount: shaderList.length,
+            itemBuilder: (_, index) => _ShaderCard(
+              shader: shaderList[index],
+              onTap: () => context.push(shaderList[index].path),
+            ),
+          );
+        },
       ),
     );
   }
@@ -56,14 +94,12 @@ class _ShaderCard extends StatelessWidget {
       elevation: 5,
       clipBehavior: .antiAliasWithSaveLayer,
       shape: RoundedRectangleBorder(borderRadius: .circular(16)),
-      child: ClipRRect(
-        borderRadius: .circular(16),
+      child: AspectRatio(
+        aspectRatio: .8,
         child: Stack(
+          fit: .expand,
           children: <Widget>[
-            AspectRatio(
-              aspectRatio: .8,
-              child: Image.asset(shader.thumbnail, fit: .cover),
-            ),
+            Image.asset(shader.thumbnail, fit: .cover),
             Positioned.fill(
               child: DecoratedBox(
                 decoration: BoxDecoration(
