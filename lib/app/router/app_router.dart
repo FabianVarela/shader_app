@@ -24,10 +24,7 @@ final appRouter = GoRouter(
       path: '/',
       builder: (_, _) => const MainPage(),
       routes: <RouteBase>[
-        GoRoute(
-          path: 'wave',
-          builder: (_, _) => const WavePage(),
-        ),
+        GoRoute(path: 'wave', builder: (_, _) => const WavePage()),
         GoRoute(
           path: 'pyramid-fractal',
           builder: (_, _) => const PyramidPage(),
@@ -52,26 +49,14 @@ final appRouter = GoRouter(
           path: 'wavy-stripes',
           builder: (_, _) => const WavyStripesPage(),
         ),
-        GoRoute(
-          path: 'burn-effect',
-          builder: (_, _) => const BurnEffectPage(),
-        ),
+        GoRoute(path: 'burn-effect', builder: (_, _) => const BurnEffectPage()),
         GoRoute(
           path: 'warp-effect',
           builder: (_, _) => const WarpCounterPage(),
         ),
-        GoRoute(
-          path: 'plasma-effect',
-          builder: (_, _) => const PlasmaPage(),
-        ),
-        GoRoute(
-          path: 'sun-vortex',
-          builder: (_, _) => const SunVortexPage(),
-        ),
-        GoRoute(
-          path: 'dive-cloud',
-          builder: (_, _) => const DiveCloudPage(),
-        ),
+        GoRoute(path: 'plasma-effect', builder: (_, _) => const PlasmaPage()),
+        GoRoute(path: 'sun-vortex', builder: (_, _) => const SunVortexPage()),
+        GoRoute(path: 'dive-cloud', builder: (_, _) => const DiveCloudPage()),
         GoRoute(
           path: 'butterfly-flock',
           builder: (_, _) => const ButterflyForestPage(),
@@ -80,10 +65,7 @@ final appRouter = GoRouter(
           path: 'cyberspace-warehouse',
           builder: (_, _) => const CyberSpaceWarehousePage(),
         ),
-        GoRoute(
-          path: 'orb-effect',
-          builder: (_, _) => const OrbEffectPage(),
-        ),
+        GoRoute(path: 'orb-effect', builder: (_, _) => const OrbEffectPage()),
         GoRoute(
           path: 'hail-mary',
           builder: (_, _) => const HailMaryParticlesPage(),

@@ -47,16 +47,13 @@ class _PlasmaViewState extends State<PlasmaView>
     return Scaffold(
       backgroundColor: Colors.black,
       body: ShaderBuilder(
-        (_, shader, child) => AnimatedSampler(
-          (_, size, canvas) {
-            shader
-              ..setFloat(0, _time)
-              ..setFloat(1, size.width)
-              ..setFloat(2, size.height);
-            canvas.drawPaint(Paint()..shader = shader);
-          },
-          child: child!,
-        ),
+        (_, shader, child) => AnimatedSampler((_, size, canvas) {
+          shader
+            ..setFloat(0, _time)
+            ..setFloat(1, size.width)
+            ..setFloat(2, size.height);
+          canvas.drawPaint(Paint()..shader = shader);
+        }, child: child!),
         assetKey: 'shaders/plasma_effect.frag',
         child: SizedBox(width: screenSize.width, height: screenSize.height),
       ),

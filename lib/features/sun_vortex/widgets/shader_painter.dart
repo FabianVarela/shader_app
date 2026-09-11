@@ -18,10 +18,7 @@ class ShaderPainter extends CustomPainter {
       ..setFloat(idx++, size.height);
 
     final paint = Paint()..shader = shader;
-    canvas.drawRect(
-      Rect.fromLTWH(0, 0, size.width, size.height),
-      paint,
-    );
+    canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
   }
 
   @override

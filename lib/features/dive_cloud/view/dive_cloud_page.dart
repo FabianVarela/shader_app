@@ -55,9 +55,7 @@ class _DiveCloudViewState extends State<DiveCloudView> {
   }
 
   Future<void> _loadMyShader() async {
-    final program = await FragmentProgram.fromAsset(
-      'shaders/dive_cloud.frag',
-    );
+    final program = await FragmentProgram.fromAsset('shaders/dive_cloud.frag');
 
     _shader = program.fragmentShader();
     setState(() {});

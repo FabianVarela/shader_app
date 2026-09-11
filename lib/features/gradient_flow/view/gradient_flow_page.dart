@@ -66,9 +66,12 @@ class _GradientFlowViewState extends State<GradientFlowView> {
     );
 
     _shader = program.fragmentShader();
-    _colors.addAll(
-      [_generateColor, _generateColor, _generateColor, _generateColor],
-    );
+    _colors.addAll([
+      _generateColor,
+      _generateColor,
+      _generateColor,
+      _generateColor,
+    ]);
 
     setState(() {});
 
