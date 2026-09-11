@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/features/hail_mary_particles/widgets/hail_mary_painter.dart';
 
 class HailMaryParticlesPage extends StatelessWidget {
-  const HailMaryParticlesPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class HailMaryParticlesPage extends StatelessWidget {
 }
 
 class HailMaryParticlesView extends StatefulWidget {
-  const HailMaryParticlesView({super.key});
+  const new({super.key});
 
   @override
   State<HailMaryParticlesView> createState() => _HailMaryParticlesViewState();
@@ -38,7 +38,7 @@ class _HailMaryParticlesViewState extends State<HailMaryParticlesView>
       vsync: this,
       duration: const Duration(hours: 1),
     );
-    unawaited(_controller.repeat());
+    _controller.repeat();
 
     _transitionController = AnimationController(
       vsync: this,

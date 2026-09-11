@@ -1,8 +1,9 @@
 import 'dart:ui' as ui;
-import 'package:flutter/material.dart';
+
+import 'package:material_ui/material_ui.dart';
 
 class OrbPainter extends CustomPainter {
-  OrbPainter({required this.shader, required this.time});
+  new({required this.shader, required this.time});
 
   final ui.FragmentShader shader;
   final double time;

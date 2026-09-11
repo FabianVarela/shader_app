@@ -1,9 +1,9 @@
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class CyberspacePainter extends CustomPainter {
-  const CyberspacePainter({required this.shader, required this.time});
+  const new({required this.shader, required this.time});
 
   final ui.FragmentShader shader;
   final double time;

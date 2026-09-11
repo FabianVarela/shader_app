@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/features/wave/widgets/shader_painter.dart';
 
 class WavePage extends StatelessWidget {
-  const WavePage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class WavePage extends StatelessWidget {
 }
 
 class WaveView extends StatefulWidget {
-  const WaveView({super.key});
+  const new({super.key});
 
   @override
   State<WaveView> createState() => _WaveViewState();

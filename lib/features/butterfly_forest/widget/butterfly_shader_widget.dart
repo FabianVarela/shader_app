@@ -1,12 +1,11 @@
-import 'dart:async';
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/features/butterfly_forest/widget/butterfly_painter.dart';
 
 class ButterflyWidget extends StatefulWidget {
-  const ButterflyWidget({
+  const new({
     required this.program,
     required this.noiseImage,
     required this.envImage,
@@ -43,7 +42,7 @@ class _ButterflyWidgetState extends State<ButterflyWidget>
     _ticker = createTicker((elapsed) {
       setState(() => _time = elapsed.inMicroseconds / 1e6);
     });
-    unawaited(_ticker.start());
+    _ticker.start();
   }
 
   @override

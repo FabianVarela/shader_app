@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/app/gen/assets.gen.dart';
 import 'package:shader_app/features/butterfly_forest/widget/butterfly_shader_widget.dart';
 
 class ButterflyForestPage extends StatelessWidget {
-  const ButterflyForestPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class ButterflyForestPage extends StatelessWidget {
 }
 
 class ButterflyForestView extends StatelessWidget {
-  const ButterflyForestView({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +71,7 @@ class ButterflyForestView extends StatelessWidget {
 }
 
 class _ButterflyAssets {
-  const _ButterflyAssets({
+  const new({
     required this.program,
     required this.noiseImage,
     required this.envImage,

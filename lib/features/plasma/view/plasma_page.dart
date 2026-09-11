@@ -1,11 +1,9 @@
-import 'dart:async';
-
-import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_shaders/flutter_shaders.dart';
+import 'package:material_ui/material_ui.dart';
 
 class PlasmaPage extends StatelessWidget {
-  const PlasmaPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +12,7 @@ class PlasmaPage extends StatelessWidget {
 }
 
 class PlasmaView extends StatefulWidget {
-  const PlasmaView({super.key});
+  const new({super.key});
 
   @override
   State<PlasmaView> createState() => _PlasmaViewState();
@@ -33,7 +31,7 @@ class _PlasmaViewState extends State<PlasmaView>
       _time += 0.015;
       setState(() {});
     });
-    unawaited(_ticker.start());
+    _ticker.start();
   }
 
   @override

@@ -1,11 +1,9 @@
-import 'dart:async';
-
-import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_shaders/flutter_shaders.dart';
+import 'package:material_ui/material_ui.dart';
 
 class PyramidPage extends StatelessWidget {
-  const PyramidPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +12,7 @@ class PyramidPage extends StatelessWidget {
 }
 
 class PyramidView extends StatefulWidget {
-  const PyramidView({super.key});
+  const new({super.key});
 
   @override
   State<PyramidView> createState() => _PyramidViewState();
@@ -33,7 +31,7 @@ class _PyramidViewState extends State<PyramidView>
       _time += 0.015;
       setState(() {});
     });
-    unawaited(_ticker.start());
+    _ticker.start();
   }
 
   @override
@@ -49,16 +47,13 @@ class _PyramidViewState extends State<PyramidView>
     return Scaffold(
       backgroundColor: Colors.black,
       body: ShaderBuilder(
-        (_, shader, child) => AnimatedSampler(
-          (_, size, canvas) {
-            shader
-              ..setFloat(0, _time)
-              ..setFloat(1, size.width)
-              ..setFloat(2, size.height);
-            canvas.drawPaint(Paint()..shader = shader);
-          },
-          child: child!,
-        ),
+        (_, shader, child) => AnimatedSampler((_, size, canvas) {
+          shader
+            ..setFloat(0, _time)
+            ..setFloat(1, size.width)
+            ..setFloat(2, size.height);
+          canvas.drawPaint(Paint()..shader = shader);
+        }, child: child!),
         assetKey: 'shaders/pyramid_fractal.frag',
         child: SizedBox(width: screenSize.width, height: screenSize.height),
       ),

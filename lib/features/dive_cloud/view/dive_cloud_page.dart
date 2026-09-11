@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/features/dive_cloud/widgets/shader_painter.dart';
 
 class DiveCloudPage extends StatelessWidget {
-  const DiveCloudPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class DiveCloudPage extends StatelessWidget {
 }
 
 class DiveCloudView extends StatefulWidget {
-  const DiveCloudView({super.key});
+  const new({super.key});
 
   @override
   State<DiveCloudView> createState() => _DiveCloudViewState();

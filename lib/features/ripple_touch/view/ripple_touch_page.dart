@@ -1,11 +1,9 @@
-import 'dart:async';
-
-import 'package:flutter/material.dart';
 import 'package:flutter_shaders/flutter_shaders.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/app/gen/assets.gen.dart';
 
 class RippleTouchPage extends StatelessWidget {
-  const RippleTouchPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +12,7 @@ class RippleTouchPage extends StatelessWidget {
 }
 
 class RippleTouchView extends StatefulWidget {
-  const RippleTouchView({super.key});
+  const new({super.key});
 
   @override
   State<RippleTouchView> createState() => _RippleTouchViewState();
@@ -54,23 +52,20 @@ class _RippleTouchViewState extends State<RippleTouchView>
               animation: _controller,
               builder: (_, child) => ShaderBuilder(
                 (context, shader, child) {
-                  return AnimatedSampler(
-                    (image, size, canvas) {
-                      shader
-                        ..setFloat(0, size.width)
-                        ..setFloat(1, size.height)
-                        ..setFloat(2, _pointer.dx)
-                        ..setFloat(3, _pointer.dy)
-                        ..setFloat(4, _controller.value * 10)
-                        ..setImageSampler(0, image);
+                  return AnimatedSampler((image, size, canvas) {
+                    shader
+                      ..setFloat(0, size.width)
+                      ..setFloat(1, size.height)
+                      ..setFloat(2, _pointer.dx)
+                      ..setFloat(3, _pointer.dy)
+                      ..setFloat(4, _controller.value * 10)
+                      ..setImageSampler(0, image);
 
-                      canvas.drawRect(
-                        Rect.fromLTWH(0, 0, size.width, size.height),
-                        Paint()..shader = shader,
-                      );
-                    },
-                    child: child!,
-                  );
+                    canvas.drawRect(
+                      Rect.fromLTWH(0, 0, size.width, size.height),
+                      Paint()..shader = shader,
+                    );
+                  }, child: child!);
                 },
                 assetKey: 'shaders/ripple_touch.frag',
                 child: child,
@@ -93,8 +88,9 @@ class _RippleTouchViewState extends State<RippleTouchView>
   }
 
   void _updatePointer(PointerEvent details) {
-    _controller.reset();
-    unawaited(_controller.forward());
+    _controller
+      ..reset()
+      ..forward();
 
     setState(() => _pointer = details.localPosition);
   }

@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/features/water_ripple/widgets/shader_painter.dart';
 
 class WaterRipplePage extends StatelessWidget {
-  const WaterRipplePage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class WaterRipplePage extends StatelessWidget {
 }
 
 class WaterRippleView extends StatefulWidget {
-  const WaterRippleView({super.key});
+  const new({super.key});
 
   @override
   State<WaterRippleView> createState() => _WaterRippleViewState();
@@ -33,7 +33,7 @@ class _WaterRippleViewState extends State<WaterRippleView> {
     _ticker = Ticker((elapsedTime) {
       setState(() => _delta += 1 / 60);
     });
-    unawaited(_ticker.start());
+    _ticker.start();
   }
 
   @override

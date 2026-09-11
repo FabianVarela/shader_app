@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/app/models/shader_list.dart';
 import 'package:shader_app/app/models/shader_model.dart';
 
 class MainPage extends StatelessWidget {
-  const MainPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +15,15 @@ class MainPage extends StatelessWidget {
 enum _Breakpoints {
   tablet(600),
   desktopSmall(900),
-  desktop(1200)
-  ;
+  desktop(1200);
 
-  const _Breakpoints(this.size);
+  new(this.size);
 
   final int size;
 }
 
 class MainView extends StatelessWidget {
-  const MainView({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +82,7 @@ class MainView extends StatelessWidget {
 }
 
 class _ShaderCard extends StatelessWidget {
-  const _ShaderCard({required this.shader, required this.onTap});
+  const new({required this.shader, required this.onTap});
 
   final ShaderModel shader;
   final VoidCallback onTap;
@@ -170,7 +169,7 @@ class _ShaderCard extends StatelessWidget {
 }
 
 class _CategoryTag extends StatelessWidget {
-  const _CategoryTag({required this.text});
+  const new({required this.text});
 
   final String text;
 

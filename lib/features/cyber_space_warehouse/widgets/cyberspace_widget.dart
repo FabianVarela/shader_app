@@ -1,12 +1,11 @@
-import 'dart:async';
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/features/cyber_space_warehouse/widgets/cyberspace_painter.dart';
 
 class CyberspaceWidget extends StatefulWidget {
-  const CyberspaceWidget({required this.program, super.key});
+  const new({required this.program, super.key});
 
   final ui.FragmentProgram program;
 
@@ -30,7 +29,7 @@ class _CyberspaceWidgetState extends State<CyberspaceWidget>
       setState(() => _time = elapsed.inMicroseconds / 1e6);
     });
 
-    unawaited(_ticker.start());
+    _ticker.start();
   }
 
   @override

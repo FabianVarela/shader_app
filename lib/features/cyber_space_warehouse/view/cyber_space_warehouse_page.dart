@@ -1,10 +1,10 @@
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/features/cyber_space_warehouse/widgets/cyberspace_widget.dart';
 
 class CyberSpaceWarehousePage extends StatelessWidget {
-  const CyberSpaceWarehousePage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class CyberSpaceWarehousePage extends StatelessWidget {
 }
 
 class CyberSpaceWarehouseView extends StatelessWidget {
-  const CyberSpaceWarehouseView({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {

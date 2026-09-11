@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/features/orb_effect/widgets/orb_painter.dart';
 
 class OrbEffectPage extends StatelessWidget {
-  const OrbEffectPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class OrbEffectPage extends StatelessWidget {
 }
 
 class OrbEffectView extends StatefulWidget {
-  const OrbEffectView({super.key, this.size = 400});
+  const new({super.key, this.size = 400});
 
   final double size;
 
@@ -47,7 +47,7 @@ class _OrbEffectViewState extends State<OrbEffectView>
 
     if (mounted) {
       setState(() => _shader = program.fragmentShader());
-      unawaited(_ticker.start());
+      _ticker.start();
     }
   }
 

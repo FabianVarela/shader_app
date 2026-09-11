@@ -1,10 +1,10 @@
 import 'dart:ui';
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class ShaderPainter extends CustomPainter {
-  ShaderPainter(FragmentShader fragmentShader, this.uniforms, this.images)
+  new(FragmentShader fragmentShader, this.uniforms, this.images)
     : shader = fragmentShader;
 
   final FragmentShader shader;

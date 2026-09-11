@@ -1,9 +1,9 @@
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class ButterflyPainter extends CustomPainter {
-  const ButterflyPainter({
+  const new({
     required this.shader,
     required this.time,
     this.mousePos = .zero,

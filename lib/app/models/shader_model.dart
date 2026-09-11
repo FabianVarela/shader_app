@@ -1,5 +1,5 @@
 class ShaderModel {
-  const ShaderModel({
+  const new({
     required this.id,
     required this.title,
     required this.category,

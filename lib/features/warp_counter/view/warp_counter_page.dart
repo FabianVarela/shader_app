@@ -1,11 +1,9 @@
-import 'dart:async';
-
-import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_shaders/flutter_shaders.dart';
+import 'package:material_ui/material_ui.dart';
 
 class WarpCounterPage extends StatelessWidget {
-  const WarpCounterPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +12,7 @@ class WarpCounterPage extends StatelessWidget {
 }
 
 class WarpCounterView extends StatefulWidget {
-  const WarpCounterView({super.key});
+  const new({super.key});
 
   @override
   State<WarpCounterView> createState() => _WarpCounterViewState();
@@ -34,7 +32,7 @@ class _WarpCounterViewState extends State<WarpCounterView>
     _ticker = createTicker((elapsed) {
       setState(() => _elapsed = elapsed);
     });
-    unawaited(_ticker.start());
+    _ticker.start();
   }
 
   @override

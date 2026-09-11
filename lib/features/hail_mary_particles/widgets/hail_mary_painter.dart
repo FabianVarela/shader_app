@@ -1,9 +1,9 @@
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class NebulosaPainter extends CustomPainter {
-  const NebulosaPainter({
+  const new({
     required this.shader,
     required this.time,
     this.speed = .07,
@@ -49,15 +49,15 @@ class NebulosaPainter extends CustomPainter {
 }
 
 class ParticlesPainter extends CustomPainter {
-  const ParticlesPainter({
+  const new({
     required this.shader,
     required this.time,
-    this.speed = 0.75,
+    this.speed = .75,
     this.density = 40,
     this.particleSize = 1.8,
-    this.spread = 0.6,
+    this.spread = .6,
     this.particleBright = 1,
-    this.nebulosaBright = 0.75,
+    this.nebulosaBright = .75,
     this.nebulosaScale = 2,
     this.vig = 0,
   });

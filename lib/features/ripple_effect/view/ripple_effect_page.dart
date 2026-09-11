@@ -1,14 +1,14 @@
 import 'dart:async';
-import 'dart:ui';
 import 'dart:ui' as ui;
+import 'dart:ui';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/app/gen/assets.gen.dart';
 import 'package:shader_app/features/ripple_effect/widgets/shader_painter.dart';
 
 class RippleEffectPage extends StatelessWidget {
-  const RippleEffectPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class RippleEffectPage extends StatelessWidget {
 }
 
 class RippleEffectView extends StatefulWidget {
-  const RippleEffectView({super.key});
+  const new({super.key});
 
   @override
   State<RippleEffectView> createState() => _RippleEffectViewState();

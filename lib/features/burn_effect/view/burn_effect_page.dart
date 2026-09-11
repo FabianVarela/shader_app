@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/app/gen/assets.gen.dart';
 import 'package:shader_app/features/burn_effect/widgets/shader_painter.dart';
 
 class BurnEffectPage extends StatelessWidget {
-  const BurnEffectPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class BurnEffectPage extends StatelessWidget {
 }
 
 class BurnEffectView extends StatefulWidget {
-  const BurnEffectView({super.key});
+  const new({super.key});
 
   @override
   State<BurnEffectView> createState() => _BurnEffectViewState();
@@ -52,33 +52,41 @@ class _BurnEffectViewState extends State<BurnEffectView> {
       body: SafeArea(
         child: _shader == null || _image == null
             ? const Center(child: CircularProgressIndicator())
-            : Column(
-                spacing: 8,
-                children: <Widget>[
-                  Padding(
-                    padding: const .all(16),
-                    child: ClipRRect(
-                      borderRadius: .circular(32),
-                      child: AspectRatio(
-                        aspectRatio: _image!.width / _image!.height,
-                        child: CustomPaint(
-                          painter: ShaderPainter(shader: _shader!),
+            : Padding(
+                padding: const .only(bottom: 16),
+                child: SizedBox(
+                  width: MediaQuery.sizeOf(context).width,
+                  child: Column(
+                    spacing: 8,
+                    children: <Widget>[
+                      Expanded(
+                        child: Padding(
+                          padding: const .all(16),
+                          child: ClipRRect(
+                            borderRadius: .circular(32),
+                            child: AspectRatio(
+                              aspectRatio: _image!.width / _image!.height,
+                              child: CustomPaint(
+                                painter: ShaderPainter(shader: _shader!),
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      ElevatedButton(
+                        onPressed: _isCompleted && !_isRestored
+                            ? _restore
+                            : _startAnimation,
+                        child: AnimatedSwitcher(
+                          duration: Durations.medium4,
+                          child: _isCompleted && !_isRestored
+                              ? const Text('Restore', key: ValueKey('restore'))
+                              : const Text('Burn it!!!', key: ValueKey('burn')),
+                        ),
+                      ),
+                    ],
                   ),
-                  ElevatedButton(
-                    onPressed: _isCompleted && !_isRestored
-                        ? _restore
-                        : _startAnimation,
-                    child: AnimatedSwitcher(
-                      duration: Durations.medium4,
-                      child: _isCompleted && !_isRestored
-                          ? const Text('Restore', key: ValueKey('restore'))
-                          : const Text('Burn it!!!', key: ValueKey('burn')),
-                    ),
-                  ),
-                ],
+                ),
               ),
       ),
     );
@@ -93,10 +101,10 @@ class _BurnEffectViewState extends State<BurnEffectView> {
     _image = await _decodeImage();
     if (_image == null && !mounted) return;
 
-    final canvas = await _takeCanvasPicture(
-      (_image!.width, _image!.height),
-      Theme.of(context).scaffoldBackgroundColor,
-    );
+    final canvas = await _takeCanvasPicture((
+      _image!.width,
+      _image!.height,
+    ), Theme.of(context).scaffoldBackgroundColor);
 
     _shader!
       ..setImageSampler(0, _image!)
@@ -107,9 +115,8 @@ class _BurnEffectViewState extends State<BurnEffectView> {
   }
 
   Future<ui.Image> _decodeImage() async {
-    final bundleImage = await DefaultAssetBundle.of(
-      context,
-    ).load(Assets.resources.dashVertical);
+    final bundleImage = await DefaultAssetBundle.of(context)
+        .load(Assets.resources.dashVertical);
 
     final bytes = bundleImage.buffer.asUint8List();
     final codec = await ui.instantiateImageCodec(Uint8List.fromList(bytes));
@@ -128,7 +135,7 @@ class _BurnEffectViewState extends State<BurnEffectView> {
     Canvas(recorder).drawRect(rect, paint);
 
     final picture = recorder.endRecording();
-    return picture.toImage(width, height);
+    return await picture.toImage(width, height);
   }
 
   void _startAnimation() {

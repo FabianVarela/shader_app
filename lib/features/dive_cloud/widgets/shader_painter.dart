@@ -4,7 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 class ShaderPainter extends CustomPainter {
-  const ShaderPainter({required this.shader, required this.time});
+  const new({required this.shader, required this.time});
 
   final FragmentShader shader;
   final double time;
@@ -19,10 +19,7 @@ class ShaderPainter extends CustomPainter {
       ..setFloat(idx++, size.height);
 
     final paint = Paint()..shader = shader;
-    canvas.drawRect(
-      Rect.fromLTWH(0, 0, size.width, size.height),
-      paint,
-    );
+    canvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
   }
 
   @override

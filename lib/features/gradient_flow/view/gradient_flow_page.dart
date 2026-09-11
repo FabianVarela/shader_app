@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/features/gradient_flow/widgets/shader_painter.dart';
 
 class GradientFlowPage extends StatelessWidget {
-  const GradientFlowPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class GradientFlowPage extends StatelessWidget {
 }
 
 class GradientFlowView extends StatefulWidget {
-  const GradientFlowView({super.key});
+  const new({super.key});
 
   @override
   State<GradientFlowView> createState() => _GradientFlowViewState();

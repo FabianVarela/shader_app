@@ -1,9 +1,9 @@
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class ShaderPainter extends CustomPainter {
-  const ShaderPainter({required this.shader, required this.time});
+  const new({required this.shader, required this.time});
 
   final FragmentShader shader;
   final double time;

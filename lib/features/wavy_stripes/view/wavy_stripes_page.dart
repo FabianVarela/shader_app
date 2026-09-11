@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/features/wavy_stripes/widgets/shader_painter.dart';
 
 class WavyStripesPage extends StatelessWidget {
-  const WavyStripesPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class WavyStripesPage extends StatelessWidget {
 }
 
 class WavyStripesView extends StatefulWidget {
-  const WavyStripesView({super.key});
+  const new({super.key});
 
   @override
   State<WavyStripesView> createState() => _WavyStripesViewState();

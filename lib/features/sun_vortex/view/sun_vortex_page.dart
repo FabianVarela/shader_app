@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'dart:ui';
-import 'package:flutter/material.dart';
+
+import 'package:material_ui/material_ui.dart';
 import 'package:shader_app/features/sun_vortex/widgets/shader_painter.dart';
 
 class SunVortexPage extends StatelessWidget {
-  const SunVortexPage({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class SunVortexPage extends StatelessWidget {
 }
 
 class SunVortexView extends StatefulWidget {
-  const SunVortexView({super.key});
+  const new({super.key});
 
   @override
   State<SunVortexView> createState() => _SunVortexViewState();
@@ -55,9 +56,7 @@ class _SunVortexViewState extends State<SunVortexView> {
   }
 
   Future<void> _loadMyShader() async {
-    final program = await FragmentProgram.fromAsset(
-      'shaders/sun_vortex.frag',
-    );
+    final program = await FragmentProgram.fromAsset('shaders/sun_vortex.frag');
 
     _shader = program.fragmentShader();
     setState(() {});
